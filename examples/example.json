@@ -1,0 +1,135 @@
+{
+  "cost_profile": [0, 3, 3, 3, 2, 0, 1],
+  "cards": [
+    {
+      "name": "mystique",
+      "cost": 3
+    },
+    {
+      "name": "wong",
+      "cost": 4
+    },
+    {
+      "name": "iron heart",
+      "cost": 3
+    },
+    {
+      "name": "gambit",
+      "cost": 3
+    },
+    {
+      "name": "odin",
+      "cost": 6
+    }
+  ],
+  "condition_references": [
+    {
+      "name": "gambit_wong_odin",
+      "condition": {
+        "all_of": [
+          {
+            "card_name": "gambit",
+            "comes_at_or_before": 4
+          },
+          {
+            "card_name": "wong",
+            "comes_at_or_before": 5
+          },
+          {
+            "card_name": "odin",
+            "comes_at_or_before": 6
+          }
+        ]
+      }
+    },
+    {
+      "name": "iron_heart_wong_odin",
+      "condition": {
+        "all_of": [
+          {
+            "card_name": "iron heart",
+            "comes_at_or_before": 4
+          },
+          {
+            "card_name": "wong",
+            "comes_at_or_before": 5
+          },
+          {
+            "card_name": "odin",
+            "comes_at_or_before": 6
+          }
+        ]
+      }
+    }
+  ],
+  "analysis": [
+    {
+      "kind": "cost_efficiency",
+      "name": "cost efficiency"
+    },
+    {
+      "name": "quad gambit",
+      "kind": "custom",
+      "conditions": [
+        {
+          "reference": "gambit_wong_odin"
+        }
+      ]
+    },
+    {
+      "name": "quad iron heart",
+      "kind": "custom",
+      "conditions": [
+        {
+          "reference": "iron_heart_wong_odin"
+        }
+      ]
+    },
+    {
+      "name": "quad gambit or iron heart",
+      "kind": "custom",
+      "conditions": [
+        {
+          "any_of": [
+            {
+              "reference": "iron_heart_wong_odin"
+            },
+            {
+              "reference": "gambit_wong_odin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "double quad gambit or iron heart",
+      "kind": "custom",
+      "conditions": [
+        {
+          "any_of": [
+            {
+              "card_name": "iron heart",
+              "comes_at_or_before": 3
+            },
+            {
+              "card_name": "gambit",
+              "comes_at_or_before": 3
+            }
+          ]
+        },
+        {
+          "card_name": "wong",
+          "comes_at_or_before": 4
+        },
+        {
+          "card_name": "mystique",
+          "comes_at_or_before": 5
+        },
+        {
+          "card_name": "odin",
+          "comes_at_or_before": 6
+        }
+      ]
+    }
+  ]
+}

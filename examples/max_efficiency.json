@@ -1,0 +1,11 @@
+{
+  "cost_profile": [0, 3, 3, 3, 2, 1, 0],
+  "cards": [
+  ],
+  "analysis": [
+    {
+      "kind": "cost_efficiency",
+      "name": "cost efficiency"
+    }
+  ]
+}
